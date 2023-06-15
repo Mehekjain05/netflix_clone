@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import {auth} from '../firebase'
 import './Signin.css'
+import HomeScreen from './HomeScreen';
+import { NavLink } from 'react-router-dom'
 
 const SignInScreen = () => {
   const emailRef = useRef(null);
@@ -31,7 +33,7 @@ const SignInScreen = () => {
         <h1>Sign In</h1>
         <input ref={emailRef} placeholder='Email' type='email'/>
         <input ref={passwordRef} placeholder='Password' type='password'/>
-        <button type='submit'>Sign In</button>
+        <NavLink to="/home" className='button_decor'><button type='submit' >Sign In</button></NavLink>
 
         <h4><span className='SignInScreen_gray'>New to Netflix? </span><a className='decor'>Sign Up now.</a></h4>
       </form>

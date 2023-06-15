@@ -9,19 +9,14 @@ import {
 import Login from './Screens/LoginScreen';
 
 function App() {
-  const user = null;
   return (
     <Router>
-      {!user ? (
-        <Login />
-      ) : (
-        <div className='app'>
-          <Routes>
-            <Route path='/' element={<HomeScreen />} />
-            <Route path='/test' element={<h1>Hello world</h1>} />
-          </Routes>
-        </div>
-      )}
+      <div className='app'>
+        <Routes>
+          <Route exact path='/home' element={<HomeScreen />} />
+          <Route exact path='/' element={<Login />} />
+        </Routes>
+      </div>
 
     </Router>
   );
